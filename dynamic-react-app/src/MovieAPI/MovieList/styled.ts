@@ -29,6 +29,7 @@ export const header = styled.h4`
 export const year = styled(header)`
     font-size: 14px;
     margin-bottom: 1rem;
+    margin-top: 0.6rem;
 `
 
 export const Image = styled.img`
