@@ -2,17 +2,18 @@
 const URL = "http://www.omdbapi.com/?apikey=11be0b7a&s="
 
 export const GET_ALL_MOVIES = async(searchKey: string, type:string, page:number)=>{
-    try{
-        let urlSearchKeyCategory
-        const urlSearchKey = URL + searchKey.trim()
-        const category = type === "all" ? null: `&type=${type}`
-        const pages = `&page=${page}`
+    let urlSearchKeyCategory
+    const urlSearchKey = URL + searchKey.trim()
+    const category = type === "all" ? null: `&type=${type}`
+    const pages = `&page=${page}`
 
-        if(category != null){
-            urlSearchKeyCategory = urlSearchKey  + category
-        }else{
-            urlSearchKeyCategory = urlSearchKey
-        }
+    if(category != null){
+        urlSearchKeyCategory = urlSearchKey  + category
+    }else{
+        urlSearchKeyCategory = urlSearchKey
+    }
+    
+    try{
 
         const response = await fetch(urlSearchKeyCategory + pages)
         const data = await response.json()
