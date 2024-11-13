@@ -1,5 +1,5 @@
 
-const URL = "http://www.omdbapi.com/?apikey=11be0b7a&s="
+const URL = "https://www.omdbapi.com/?apikey="+import.meta.env.VITE_API_KEY
 
 export const GET_ALL_MOVIES = async(searchKey: string, type:string, page:number)=>{
     let urlSearchKeyCategory
